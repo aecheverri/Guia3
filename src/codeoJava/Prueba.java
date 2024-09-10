@@ -16,5 +16,5 @@ public class Prueba{
 /*
  Se crea un punto en donde la primer y la segunda coordenada son = .
  El problema es que se rompe el encapsulamiento, al poner los atributos x e y
- de la clase Punto.
+ de la clase Punto como "public".
  */
