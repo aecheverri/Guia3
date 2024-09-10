@@ -1,5 +1,9 @@
 package codeoJava;
 
+/* 
+Guía 3 
+Ejercicio 10 
+*/
 
 public class Lamparita {
     boolean apagada;
