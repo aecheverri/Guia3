@@ -41,36 +41,7 @@ public class Polar {
         return new Punto(x,y);
     }
 
-    public Polar sumarPolares(Polar pp){
-        Punto a = PolaresACartesianas();
-        Punto b = pp.PolaresACartesianas();
-        Punto c = a.sumarPuntos(b);
-        return CartesianasAPolares(c);
-    }
+   
 
-    private Polar CartesianasAPolares(Punto p){
-        float r = (float) Math.sqrt(Math.pow(p.getX(), 2) + Math.pow(p.getY(), 2));
-        float theta = obtenerAngulo(p);
-        return new Polar(r, theta);
-    } 
-    
-    
-     private float obtenerAngulo(Punto p){
-        float valorX = p.getX();
-        float valorY = p.getY();
-        float anguloConEjeX = (float) Math.atan2(valorX, valorY);
-        
-        if ( valorX < 0){
-            anguloConEjeX += 1f;
-        }
-        else if(valorX == 0){
-            if(valorY > 0){
-                anguloConEjeX = 0.5f;
-            }else{
-                anguloConEjeX = -0.5f;
-            }
-        }
-        return anguloConEjeX;
-     }
     
 }
