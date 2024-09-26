@@ -3,29 +3,29 @@ package codeoJava.ejer17;
 import java.util.Objects;
 
 public class Punto {
-    private Float x;
-    private Float y;
+    private float x;
+    private float y;
     
 
-    public Punto(Float x, Float y) {
+    public Punto(float x, float y) {
         this.x = x;
         this.y = y;
     }
 
-    public void setX(Float x) {
+    public void setX(float x) {
         this.x = x;
     }
 
     
-    public Float getX() {
+    public float getX() {
         return x;
     }
 
-    public Float getY() {
+    public float getY() {
         return y;
     }
 
-    public void setY(Float y) {
+    public void setY(float y) {
         this.y = y;
     }
 
