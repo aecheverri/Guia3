@@ -8,5 +8,8 @@ public class TestMonedero {
         System.out.println("Saldo actual: "+ wallet.verMonto());
         wallet.meterDinero(50f);
         System.out.println("Saldo actual: "+ wallet.verMonto());
+        wallet.sacarDinero(150f);
+        System.out.println("Saldo actual: "+ wallet.verMonto());
+        
     }
 }
