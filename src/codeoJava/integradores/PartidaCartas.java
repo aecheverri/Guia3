@@ -44,8 +44,8 @@ public class PartidaCartas {
 
     public String versionSumaPuntos(){
         repartirCartas();
-        System.out.println(cartas_jugadores.get(0));
-        System.out.println(cartas_jugadores.get(1));
+        System.out.println("Cartas de " + nombre_jugadores[0] + " : " + cartas_jugadores.get(0));
+        System.out.println("Cartas de " + nombre_jugadores[1] + " : " + cartas_jugadores.get(1));
         String ganador = "";
         int puntosJugador0 = sumarPuntosCartas(cartas_jugadores.get(0));
         int puntosJugador1 = sumarPuntosCartas(cartas_jugadores.get(1));
@@ -61,12 +61,39 @@ public class PartidaCartas {
 
     public String versionDosDigitos(){
         repartirCartas();
-        System.out.println(cartas_jugadores.get(0));
-        System.out.println(cartas_jugadores.get(1));
+        System.out.println("Cartas de " + nombre_jugadores[0] + " : " + cartas_jugadores.get(0));
+        System.out.println("Cartas de " + nombre_jugadores[1] + " : " + cartas_jugadores.get(1));
+        int nro_jugador0 = armarNumeroDosDigitos(new ArrayList<>(cartas_jugadores.get(0)));
+        int nro_jugador1 = armarNumeroDosDigitos(new ArrayList<>(cartas_jugadores.get(1)));
         String ganador = "";
-        
+        if (nro_jugador0 > nro_jugador1){
+            ganador = nombre_jugadores[0];
+        }else if(nro_jugador0 < nro_jugador1){
+            ganador = nombre_jugadores[1];
+        }
         return ganador;
     }
+
+    private int maxEnLista(List<Carta> lista_Cartas){
+        int max = 0;
+        int indiceMax = 0;
+        for(int i=0; i< lista_Cartas.size(); i++){
+            if (lista_Cartas.get(i).pasarNumeroCartaAEntero() > max && lista_Cartas.get(i).pasarNumeroCartaAEntero() < 10 ){
+                max = lista_Cartas.get(i).pasarNumeroCartaAEntero();
+                indiceMax = i;
+            }
+        }
+        lista_Cartas.remove(indiceMax);
+
+        return max;
+    }
+
+    private int armarNumeroDosDigitos(ArrayList<Carta> lista_Cartas) {
+        int max = maxEnLista(lista_Cartas);
+        int segundo_max = maxEnLista(lista_Cartas);
+        return max * 10 + segundo_max;
+    }
+
 
     private Integer maxConjunto(Collection<Integer> collection){
         Integer max = 0;
@@ -111,8 +138,8 @@ public class PartidaCartas {
 
     public String versionMismoNumero(){
         repartirCartas();
-        System.out.println(cartas_jugadores.get(0));
-        System.out.println(cartas_jugadores.get(1));
+        System.out.println("Cartas de " + nombre_jugadores[0] + " : " + cartas_jugadores.get(0));
+        System.out.println("Cartas de " + nombre_jugadores[1] + " : " + cartas_jugadores.get(1));
         String ganador = "";
         int cantidadCartasMismoNumeroJugador0 = maxCantidadCartasMismoNumero(cartas_jugadores.get(0));
         int cantidadCartasMismoNumeroJugador1 = maxCantidadCartasMismoNumero(cartas_jugadores.get(1));

@@ -5,6 +5,8 @@ public class TestPartidasCartas {
         PartidaCartas partida = new PartidaCartas("Ranchas", "Fatura");
         System.out.println(partida.versionSumaPuntos());
         System.out.println(partida.versionMismoNumero());
+        System.out.println(partida.versionDosDigitos());
+        
         System.out.println("tiene escalera: " + partida.tieneEscalera("Ranchas"));
         System.out.println("tiene escalera real: "+ partida.tieneEscaleraReal("Ranchas"));
     }
