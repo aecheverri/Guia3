@@ -20,6 +20,19 @@ public class Carta implements Comparable<Carta> {
         return NumeroACadena(numero);
     }
 
+    public int pasarNumeroCartaAEntero(){
+        return numero;
+    }
+
+    public String getColor(){
+        String color="";
+        if (palo.equals("Corazón") || palo.equals("Diamante"))
+            color = "Rojo";
+        else
+            color = "Negro";
+        return color;
+    }
+
 
     private String NumeroACadena(int nro){
         String numero_carta = "";
