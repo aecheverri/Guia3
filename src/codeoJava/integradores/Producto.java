@@ -71,7 +71,7 @@ public class Producto {
         if (obj == null || getClass() != obj.getClass())
             return false;
         Producto other = (Producto) obj;
-        return this.nombre == other.nombre 
+        return this.nombre.equals(other.nombre)  
                 && this.precio == other.precio;
     }
     
